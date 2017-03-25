@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ task.title }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ task.title }}</h1>
+  <p class="lead">{{ task.description }}</p>
+
+  <p>
+    This task is part of
+    <a href="{{ task.task_list.get_absolute_url }}">{{ task.task_list.title }}</a>
+  </p>
+
+  {% if not task.done %}
+    <p><i>This task is not yet done.</i></p>
+  {% endif %}
+
+  {% if perms.todos.change_task %}
+    <a href="edit" class="btn btn-primary">Edit</a>
+  {% endif %}
+
+{% endblock %}

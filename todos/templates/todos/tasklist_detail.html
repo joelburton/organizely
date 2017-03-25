@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  {{ tasklist.title }}
+{% endblock %}
+
+{% block content %}
+  <h1>{{ tasklist.title }}</h1>
+  <p class="lead">{{ tasklist.description }}</p>
+
+  <ul>
+    {% for task in tasklist.task_set.all %}
+      <li><a href="{{ task.get_absolute_url }}">{{ task.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% if perms.todos.add_task %}
+    <a href="add" class="btn btn-primary">Add Task</a>
+  {% endif %}
+
+
+{% endblock %}

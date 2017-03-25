@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+  All Tasks
+{% endblock %}
+
+{% block content %}
+  <h1>All Tasks</h1>
+
+  <ul>
+  {% for task in task_list %}
+    <li>
+      <a href="{{ task.get_absolute_url }}">{{ task.title }}</a>
+      <small>(in list {{ task.task_list }})</small>
+    </li>
+  {% endfor %}
+  </ul>
+
+  {% if page_obj.paginator.num_pages > 1 %}
+    {% bootstrap_pagination page_obj %}
+  {% endif %}
+
+{% endblock %}

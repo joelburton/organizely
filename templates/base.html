@@ -1,0 +1,31 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+{% load bootstrap3 %}
+
+{% block bootstrap3_extra_head %}
+  <link rel="stylesheet" href="/static/css/organizely.css">
+{% endblock %}
+
+{% block bootstrap3_title %}
+  Organizely: {% block title %}{% endblock %}
+{% endblock %}
+
+{% block bootstrap3_content %}
+
+  <header>Organizely</header>
+
+  <div class="container main-content">
+    {% bootstrap_messages %}
+
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <footer>
+    Copyright by Auden.
+    <div class="pull-right">
+      <a href="/">All Task Lists</a> |
+      <a href="/tasks/">All Tasks</a>
+    </div>
+  </footer>
+
+{% endblock %}

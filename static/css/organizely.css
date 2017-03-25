@@ -1,0 +1,17 @@
+header {
+    background-color: darkblue;
+    color: white;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+footer {
+    margin-top: 5em;
+    background-color: darkblue;
+    padding: 1em;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
