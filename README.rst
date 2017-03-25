@@ -37,7 +37,7 @@ To install / play with:
 
     $ python manage.py loaddata initial
 
-7. Run the tests (there's only one, but this is how you run them)::
+7. Run the tests (there's only one, but this is how you run tests)::
 
     $ python manage.py test
 
@@ -56,7 +56,7 @@ Playing with the Application Admin
 Playing with the Public View
 ----------------------------
 
-1. Visit http://lkocalhost:8000. You can do this either in the same browser
+1. Visit http://localhost:8000. You can do this either in the same browser
    where you were logged in as the admin (in which case you'll be able
    to add/edit tasks), or anonymously (in which case you can't).
 
