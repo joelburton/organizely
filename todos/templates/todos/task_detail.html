@@ -5,13 +5,25 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{{ task.title }}</h1>
-  <p class="lead">{{ task.description }}</p>
+
+  <ol class="breadcrumb">
+    <li><a href="/tasks/">Tasks</a></li>
+    <li class="active">{{ task.title }}</li>
+  </ol>
+
+  <div class="page-header">
+    <h1>{{ task.title }}</h1>
+    <p class="lead">{{ task.description }}</p>
+  </div>
 
   <p>
     This task is part of
     <a href="{{ task.task_list.get_absolute_url }}">{{ task.task_list.title }}</a>
   </p>
+
+  {% if task.info_url %}
+    <p><a href="{{ task.info_url }}" class="btn btn-default">More Info</a></p>
+  {% endif %}
 
   {% if not task.done %}
     <p><i>This task is not yet done.</i></p>

@@ -11,7 +11,13 @@
 
 {% block bootstrap3_content %}
 
-  <header>Organizely</header>
+  <header>
+    Organizely
+    <div class="pull-right">
+      <a class="btn btn-xs btn-primary" href="/">All Task Lists</a>
+      <a class="btn btn-xs btn-primary" href="/tasks/">All Tasks</a>
+    </div>
+  </header>
 
   <div class="container main-content">
     {% bootstrap_messages %}
@@ -22,10 +28,6 @@
 
   <footer>
     Copyright by Auden.
-    <div class="pull-right">
-      <a href="/">All Task Lists</a> |
-      <a href="/tasks/">All Tasks</a>
-    </div>
   </footer>
 
 {% endblock %}
